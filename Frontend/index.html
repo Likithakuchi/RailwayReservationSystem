@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RailVibe - Railway Reservation System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Dynamic Header loaded by script.js -->
+    <header></header>
+
+    <main class="container">
+        <!-- Hero Search Section -->
+        <section class="hero-section">
+            <div>
+                <h1 class="hero-title">Discover the Convenience of <span class="hero-highlight">Modern Rail Travel</span></h1>
+                <p class="hero-description">Search train routes, check seating availability, register bookings, and explore destinations seamlessly.</p>
+                
+                <form id="home-search-form" class="glass-card" style="text-align: left; width: 100%;">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="source">From (Source)</label>
+                            <input type="text" id="source" class="form-control" placeholder="e.g. Chennai" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="destination">To (Destination)</label>
+                            <input type="text" id="destination" class="form-control" placeholder="e.g. Bangalore" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="journey_date">Journey Date</label>
+                            <input type="date" id="journey_date" class="form-control" required>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <button type="submit" class="btn btn-primary" style="padding: 0.85rem 3rem; font-size: 1.05rem; width: 100%;">Search Trains 🚄</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="hero-image-wrapper">
+                <div class="hero-image-glow"></div>
+                <img src="images/hero_station.png" alt="Futuristic Train Station" class="hero-image">
+            </div>
+        </section>
+
+        <!-- Popular Routes Section -->
+        <section style="margin: 4rem 0;">
+            <h2 class="section-title">Popular Routes</h2>
+            <p class="section-subtitle">Trending travel routes across the railway network.</p>
+            <div class="routes-grid">
+                
+                <div class="glass-card route-card" style="padding: 0; overflow: hidden;">
+                    <img src="images/rajdhani.png" alt="Rajdhani Express" style="width: 100%; height: 160px; object-fit: cover;">
+                    <div style="padding: 1.5rem;">
+                        <div class="route-header">
+                            <span class="route-badge">Rajdhani</span>
+                        </div>
+                        <div class="route-cities">Mumbai ➔ Delhi</div>
+                        <div class="route-duration">Duration: 15h 30m</div>
+                        <div class="route-footer" style="margin-top: 1rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                            <span class="route-price">₹2,800</span>
+                            <a href="trains.html" onclick="sessionStorage.setItem('search_source','Mumbai'); sessionStorage.setItem('search_destination','Delhi');" class="btn btn-secondary btn-sm">View Timetable</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card route-card" style="padding: 0; overflow: hidden;">
+                    <img src="images/vande_bharat.png" alt="Vande Bharat Express" style="width: 100%; height: 160px; object-fit: cover;">
+                    <div style="padding: 1.5rem;">
+                        <div class="route-header">
+                            <span class="route-badge">Vande Bharat</span>
+                        </div>
+                        <div class="route-cities">Chennai ➔ Bangalore</div>
+                        <div class="route-duration">Duration: 4h 30m</div>
+                        <div class="route-footer" style="margin-top: 1rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                            <span class="route-price">₹1,200</span>
+                            <a href="trains.html" onclick="sessionStorage.setItem('search_source','Chennai'); sessionStorage.setItem('search_destination','Bangalore');" class="btn btn-secondary btn-sm">View Timetable</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card route-card" style="padding: 0; overflow: hidden;">
+                    <img src="images/shatabdi.png" alt="Shatabdi Express" style="width: 100%; height: 160px; object-fit: cover;">
+                    <div style="padding: 1.5rem;">
+                        <div class="route-header">
+                            <span class="route-badge">Shatabdi</span>
+                        </div>
+                        <div class="route-cities">Delhi ➔ Jaipur</div>
+                        <div class="route-duration">Duration: 4h 15m</div>
+                        <div class="route-footer" style="margin-top: 1rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                            <span class="route-price">₹950</span>
+                            <a href="trains.html" onclick="sessionStorage.setItem('search_source','Delhi'); sessionStorage.setItem('search_destination','Jaipur');" class="btn btn-secondary btn-sm">View Timetable</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Offers Section -->
+        <section style="margin: 4rem 0;">
+            <h2 class="section-title">Latest Offers & Deals</h2>
+            <p class="section-subtitle">Save more on your train ticket bookings with exclusive promocodes.</p>
+            <div class="offers-grid">
+                
+                <div class="glass-card offer-card">
+                    <h3>Get 15% OFF on Vande Bharat</h3>
+                    <p style="color:var(--text-secondary); margin-top: 0.5rem; font-size:0.95rem;">Book tickets for Vande Bharat trains using credit cards and get flat 15% discount.</p>
+                    <span class="offer-code">FESTIVE15</span>
+                </div>
+
+                <div class="glass-card offer-card">
+                    <h3>Zero Transaction Charges</h3>
+                    <p style="color:var(--text-secondary); margin-top: 0.5rem; font-size:0.95rem;">First booking on RailVibe has no convenience or booking service charges. Pay directly!</p>
+                    <span class="offer-code">NEWUSER</span>
+                </div>
+
+                <div class="glass-card offer-card">
+                    <h3>UPI Cashback Offer</h3>
+                    <p style="color:var(--text-secondary); margin-top: 0.5rem; font-size:0.95rem;">Get up to ₹100 instant cashback on making booking payments using UPI apps.</p>
+                    <span class="offer-code">UPISAVE</span>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 RailVibe Reservation System. Designed for travelers.</p>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">Secure SSL Encrypted Transactions &middot; Government Approved Partner</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

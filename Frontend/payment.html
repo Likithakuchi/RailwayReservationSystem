@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Portal - RailVibe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header></header>
+
+    <main class="container" style="max-width: 600px;">
+        <h2 class="section-title" style="text-align: center;">Secure Payment Gateway</h2>
+        <p class="section-subtitle" style="text-align: center;">Complete transaction details to confirm your rail booking ticket.</p>
+
+        <div class="glass-card">
+            <h3 style="border-bottom: 1px solid var(--border-glass); padding-bottom: 0.75rem; margin-bottom: 1.5rem;">Billing Breakdown</h3>
+            
+            <ul class="summary-list" style="margin-bottom: 2rem;">
+                <li>
+                    <span>Booking Reference</span>
+                    <span id="pay-booking-id">#0</span>
+                </li>
+                <li>
+                    <span>Train / Service</span>
+                    <span id="pay-train">Loading...</span>
+                </li>
+                <li>
+                    <span>Primary Traveler</span>
+                    <span id="pay-passenger">Loading...</span>
+                </li>
+                <li style="border-top:1px solid var(--border-glass); margin-top:0.75rem; padding-top:0.75rem;">
+                    <span style="font-size:1.1rem; font-weight:700;">Grand Total</span>
+                    <span id="pay-amount" style="font-size:1.4rem; font-weight:800; color:var(--success);">₹0</span>
+                </li>
+            </ul>
+
+            <form id="payment-form">
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="payment-method">Payment Processor Method</label>
+                    <select id="payment-method" class="form-control" style="background: rgba(10, 14, 23, 0.8);">
+                        <option value="UPI">UPI (Unified Payments Interface)</option>
+                        <option value="Credit Card">Credit Card</option>
+                        <option value="Debit Card">Debit Card</option>
+                        <option value="Net Banking">Net Banking Portal</option>
+                        <option value="Wallet">Digital e-Wallet</option>
+                    </select>
+                </div>
+                
+                <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4;">
+                    🔒 <strong>SSL Encrypted Connection:</strong> Your payment information is processed securely. Do not refresh or press back button while the transaction is active.
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.9rem; font-size: 1rem;">Authorize Transaction & Pay Now</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 RailVibe Reservation System. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

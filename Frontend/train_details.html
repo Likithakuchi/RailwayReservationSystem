@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Details - RailVibe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header></header>
+
+    <main class="container">
+        <h2 class="section-title">Train Configuration</h2>
+        <p class="section-subtitle">Review schedule stops and configure coach preferences before ticket reservation.</p>
+
+        <div class="details-grid">
+            
+            <!-- Left Info Card -->
+            <div class="glass-card" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div>
+                    <span class="route-badge" style="margin-bottom: 0.5rem;">Schedule Info</span>
+                    <h2 id="train-name" style="font-size: 2rem; font-weight: 800; margin-top:0.25rem;">Vande Bharat Express</h2>
+                    <p id="train-route" style="color:var(--accent-indigo); font-weight: 600; font-size:1.1rem; margin-top:0.25rem;">Chennai to Bangalore</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass); padding: 1.5rem 0;">
+                    <div>
+                        <span style="font-size:0.85rem; color:var(--text-secondary); text-transform:uppercase;">Departure Time</span>
+                        <h3 id="train-dep" style="margin-top:0.25rem;">06:00 AM</h3>
+                    </div>
+                    <div>
+                        <span style="font-size:0.85rem; color:var(--text-secondary); text-transform:uppercase;">Arrival Time</span>
+                        <h3 id="train-arr" style="margin-top:0.25rem;">10:30 AM</h3>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Select Travel Class (Coach)</h3>
+                    <div class="coaches-availability" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+                        
+                        <div class="coach-box selected" data-coach="Sleeper" data-mult="1.0">
+                            <h5>Sleeper Class (SL)</h5>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top:0.25rem;">Non-AC sleeper berths</p>
+                            <div class="fare-amt" style="margin-top: 0.5rem;">Base Fare (1.0x)</div>
+                        </div>
+
+                        <div class="coach-box" data-coach="AC 3 Tier" data-mult="1.8">
+                            <h5>AC 3 Tier (3A)</h5>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top:0.25rem;">Air-conditioned 3-tier berths</p>
+                            <div class="fare-amt" style="margin-top: 0.5rem;">Premium (1.8x)</div>
+                        </div>
+
+                        <div class="coach-box" data-coach="AC 2 Tier" data-mult="2.5">
+                            <h5>AC 2 Tier (2A)</h5>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top:0.25rem;">Air-conditioned 2-tier berths</p>
+                            <div class="fare-amt" style="margin-top: 0.5rem;">Executive (2.5x)</div>
+                        </div>
+
+                        <div class="coach-box" data-coach="AC First Class" data-mult="3.5">
+                            <h5>AC First Class (1A)</h5>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top:0.25rem;">Luxury private coupes</p>
+                            <div class="fare-amt" style="margin-top: 0.5rem;">First Class (3.5x)</div>
+                        </div>
+
+                        <div class="coach-box" data-coach="Chair Car" data-mult="1.2">
+                            <h5>Chair Car (CC)</h5>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top:0.25rem;">Comfortable reserved seats</p>
+                            <div class="fare-amt" style="margin-top: 0.5rem;">Standard (1.2x)</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Fare Card -->
+            <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; align-self: start;">
+                <div>
+                    <h3 style="border-bottom: 1px solid var(--border-glass); padding-bottom: 0.75rem; margin-bottom: 1.25rem;">Fare Summary</h3>
+                    
+                    <ul class="summary-list">
+                        <li>
+                            <span>Selected Coach</span>
+                            <span id="summary-coach">Sleeper</span>
+                        </li>
+                        <li>
+                            <span>Reservation Charge</span>
+                            <span>Included</span>
+                        </li>
+                        <li>
+                            <span>Catering Charge</span>
+                            <span>Optional</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="summary-total">
+                        <span>Total Fare</span>
+                        <span id="summary-fare">₹1,200</span>
+                    </div>
+                </div>
+
+                <button id="proceed-to-booking-btn" class="btn btn-primary" style="width: 100%; margin-top: 2rem; padding: 0.9rem;">Proceed to Booking ➔</button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 RailVibe Reservation System. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

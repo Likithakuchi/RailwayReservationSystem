@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking History - RailVibe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header></header>
+
+    <main class="container">
+        <h2 class="section-title">My Bookings History</h2>
+        <p class="section-subtitle">Manage upcoming journeys, print ticket receipts, or cancel travel schedules.</p>
+
+        <!-- Upcoming Journeys Section -->
+        <section class="glass-card" style="margin-bottom: 2.5rem;">
+            <h3 style="margin-bottom: 1rem;">Upcoming Journeys</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ref ID</th>
+                            <th>Train Name</th>
+                            <th>Date</th>
+                            <th>Route</th>
+                            <th>Seat Details</th>
+                            <th>Fare Amount</th>
+                            <th>Booking Status</th>
+                            <th>Payment Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="upcoming-journeys-list">
+                        <!-- Loaded dynamically in script.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Previous Bookings Section -->
+        <section class="glass-card">
+            <h3 style="margin-bottom: 1rem;">Previous & Cancelled Bookings</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ref ID</th>
+                            <th>Train Name</th>
+                            <th>Date</th>
+                            <th>Route</th>
+                            <th>Seat Details</th>
+                            <th>Fare Amount</th>
+                            <th>Booking Status</th>
+                            <th>Payment Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="past-journeys-list">
+                        <!-- Loaded dynamically in script.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 RailVibe Reservation System. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

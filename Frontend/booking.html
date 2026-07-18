@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Ticket - RailVibe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header></header>
+
+    <main class="container">
+        <h2 class="section-title">Passenger Details & Seating</h2>
+        <p class="section-subtitle">Confirm traveler details and pick a seat from the coach layout map.</p>
+
+        <div class="details-grid">
+            
+            <!-- Left Panel: Passenger Form & Seating -->
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                
+                <!-- Form -->
+                <div class="glass-card">
+                    <h3 style="margin-bottom: 1.5rem; border-bottom:1px solid var(--border-glass); padding-bottom:0.75rem;">1. Traveler Information</h3>
+                    <div class="form-group">
+                        <label for="p-name">Passenger Full Name</label>
+                        <input type="text" id="p-name" class="form-control" placeholder="Enter traveler's full name" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="p-age">Age</label>
+                            <input type="number" id="p-age" class="form-control" placeholder="Enter age" min="1" max="120" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="p-gender">Gender</label>
+                            <select id="p-gender" class="form-control">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seat Grid Selector -->
+                <div class="glass-card">
+                    <h3 style="margin-bottom: 0.5rem;">2. Select Seat Layout</h3>
+                    <p style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:1.5rem;">Choose an available seat from the grid layout map. Green represents your choice, Gray is occupied.</p>
+                    
+                    <div class="seat-map-container">
+                        <!-- Simulated seat map cells generated dynamically in script.js -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Panel: Summary -->
+            <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; align-self: start;">
+                <div>
+                    <h3 style="border-bottom: 1px solid var(--border-glass); padding-bottom: 0.75rem; margin-bottom: 1.25rem;">Reservation Summary</h3>
+                    
+                    <ul class="summary-list">
+                        <li>
+                            <span>Train</span>
+                            <span id="summary-train">Loading...</span>
+                        </li>
+                        <li>
+                            <span>Route</span>
+                            <span id="summary-route">Loading...</span>
+                        </li>
+                        <li>
+                            <span>Journey Date</span>
+                            <span id="summary-date">Loading...</span>
+                        </li>
+                        <li>
+                            <span>Coach Class</span>
+                            <span id="summary-coach">Loading...</span>
+                        </li>
+                        <li>
+                            <span>Allocated Seat</span>
+                            <span id="summary-seat" style="color:var(--accent-indigo); font-weight:700;">Select seat</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="summary-total">
+                        <span>Total Fare</span>
+                        <span id="summary-total">₹0</span>
+                    </div>
+                </div>
+
+                <button id="confirm-booking-btn" class="btn btn-primary" style="width: 100%; margin-top: 2rem; padding: 0.9rem;">Confirm Reservation 🎫</button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 RailVibe Reservation System. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

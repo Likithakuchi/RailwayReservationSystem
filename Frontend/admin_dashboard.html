@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - RailVibe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header></header>
+
+    <main class="container">
+        <div class="dashboard-grid">
+            
+            <!-- Left Sidebar Controls -->
+            <div class="glass-card sidebar-card" style="align-self: start;">
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--gradient-accent); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2.25rem;">🛠️</div>
+                    <h3>Rail Admin</h3>
+                    <p style="color:var(--text-secondary); font-size:0.85rem; margin-top:0.25rem;">Administrator Terminal</p>
+                </div>
+                
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="active" data-section="sec-passengers">👥 Manage Passengers</a></li>
+                    <li><a href="#" data-section="sec-trains">🚄 Manage Trains</a></li>
+                    <li><a href="#" data-section="sec-schedules">📅 Routes & Schedules</a></li>
+                    <li><a href="#" data-section="sec-bookings">🎫 Reservations</a></li>
+                    <li><a href="#" data-section="sec-payments">💳 Payment Logs</a></li>
+                    <li><a href="#" onclick="logout()">🚪 Logout Session</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Content Area -->
+            <div>
+                
+                <!-- 1. Passengers Section -->
+                <section id="sec-passengers" class="admin-section" style="display: block;">
+                    <div class="dashboard-actions">
+                        <div>
+                            <h2 class="section-title">Passenger Management</h2>
+                            <p class="section-subtitle">View traveler registrations and update profiles.</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="openAddPassengerModal()">Add Passenger +</button>
+                    </div>
+                    <div class="glass-card">
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Gender (Age)</th>
+                                        <th>Address</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-passengers-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. Trains Section -->
+                <section id="sec-trains" class="admin-section" style="display: none;">
+                    <div class="dashboard-actions">
+                        <div>
+                            <h2 class="section-title">Train Configuration</h2>
+                            <p class="section-subtitle">Manage trains, numbers, types, and seating sizes.</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="openAddTrainModal()">Add Train +</button>
+                    </div>
+                    <div class="glass-card">
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Train ID</th>
+                                        <th>Train Name</th>
+                                        <th>Number</th>
+                                        <th>Type</th>
+                                        <th>Total Seats</th>
+                                        <th>Stations</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-trains-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. Schedules Section -->
+                <section id="sec-schedules" class="admin-section" style="display: none;">
+                    <div class="dashboard-actions">
+                        <div>
+                            <h2 class="section-title">Route & Schedule Timetables</h2>
+                            <p class="section-subtitle">Set active travel schedules, departures, arrivals, and base fares.</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="openAddScheduleModal()">Add Schedule +</button>
+                    </div>
+                    <div class="glass-card">
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Train Name</th>
+                                        <th>Route Path</th>
+                                        <th>Departure</th>
+                                        <th>Arrival</th>
+                                        <th>Base Fare</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-schedules-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. Bookings Section -->
+                <section id="sec-bookings" class="admin-section" style="display: none;">
+                    <div class="dashboard-actions">
+                        <div>
+                            <h2 class="section-title">Ticket Reservations</h2>
+                            <p class="section-subtitle">Track, update, or cancel passenger booking reservations.</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="openAddBookingModal()">Create Booking +</button>
+                    </div>
+                    <div class="glass-card">
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Ref ID</th>
+                                        <th>Passenger</th>
+                                        <th>Train Name</th>
+                                        <th>Date</th>
+                                        <th>Route</th>
+                                        <th>Seat</th>
+                                        <th>Fare</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-bookings-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. Payments Section -->
+                <section id="sec-payments" class="admin-section" style="display: none;">
+                    <div class="dashboard-actions">
+                        <div>
+                            <h2 class="section-title">Payment Transaction History</h2>
+                            <p class="section-subtitle">Review credit/debit, UPI, and wallet payments.</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="openAddPaymentModal()">Add Payment Record +</button>
+                    </div>
+                    <div class="glass-card">
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Ref ID</th>
+                                        <th>Booking ID</th>
+                                        <th>Passenger</th>
+                                        <th>Amount</th>
+                                        <th>Method</th>
+                                        <th>Transaction ID</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-payments-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- CRUD Dialog Overlay Modal (Shared Content) -->
+    <div class="modal-overlay">
+        <div class="glass-card modal-card">
+            <div class="modal-header">
+                <h3 id="modal-title">Form Modal</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form id="admin-modal-form" onsubmit="handleModalSubmit(event)">
+                <div id="modal-form-content">
+                    <!-- Loaded dynamically via script.js -->
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="document.querySelector('.modal-overlay').classList.remove('active')">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 RailVibe Reservation System. Admin Terminal.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
