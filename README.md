@@ -7,47 +7,35 @@ This project simplifies the railway ticket booking process by providing a secure
 
 ✨ Features
 👤 User
-User Registration & Login
-Secure Authentication
-Search Available Trains
-View Train Details
-Book Train Tickets
-Cancel Bookings
-View Booking History
-Update User Profile
+*User Registration & Login
+*Secure Authentication
+*Search Available Trains
+*View Train Details
+*Book Train Tickets
+*Cancel Bookings
+*View Booking History
+*Update User Profile
+
 🛠 Admin
-Admin Login
-Add New Trains
-Update Train Information
-Delete Trains
-Manage Routes
-Manage Schedules
-View All Bookings
-Manage Users
+*Admin Login
+*Add New Trains
+*Update Train Information
+*Delete Trains
+*Manage Routes
+*Manage Schedules
+*View All Bookings
+*Manage Users
 🛠 Tech Stack
 Frontend
-HTML5
-CSS3
-Bootstrap
-JavaScript
+*HTML5
+*CSS3
+*Bootstrap
+*JavaScript
 Backend
-Python
-Django
+*Python
+*Django
 Database
-SQLite
-📁 Project Structure
-RailwayReservationSystem/
-│
-├── railway/
-├── reservation/
-├── templates/
-├── static/
-│   ├── css/
-│   ├── js/
-│   └── images/
-├── db.sqlite3
-├── manage.py
-└── requirements.txt
+*SQLite
 
 <img width="815" height="435" alt="Screenshot 2026-07-18 212445" src="https://github.com/user-attachments/assets/05e74540-3166-4c49-b55f-c115bbe66b1c" />
 
@@ -61,21 +49,21 @@ RailwayReservationSystem/
 
 
 Modules
-Home Page
-User Authentication
-Train Search
-Ticket Booking
-Booking Confirmation
-Booking History
-Train Management
-User Management
-Admin Dashboard
+*Home Page
+*User Authentication
+*Train Search
+*Ticket Booking
+*Booking Confirmation
+*Booking History
+*rain Management
+*User Management
+*Admin Dashboard
 🎯 Future Enhancements
-Online Payment Gateway
-Email Ticket Confirmation
-SMS Notifications
-Seat Availability Prediction
-QR Code Ticket Generation
-Download Ticket as PDF
-Live Train Tracking
-Waitlist Management
+*Online Payment Gateway
+*Email Ticket Confirmation
+*SMS Notifications
+*Seat Availability Prediction
+*QR Code Ticket Generation
+*Download Ticket as PDF
+*Live Train Tracking
+*Waitlist Management
